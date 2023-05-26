@@ -65,6 +65,7 @@ public class callusTest {
 		 
 
 		 driver.findElement(MobileBy.AccessibilityId("Open")).click();
+		 Thread.sleep(2000);
 		 driver.findElement(MobileBy.AndroidUIAutomator("text(\"Information Center\")")).click();
 //		 driver.findElement(MobileBy.id("btnOkay")).click();
 //		 driver.findElement(MobileBy.id("info_center_grid_list")).click();
