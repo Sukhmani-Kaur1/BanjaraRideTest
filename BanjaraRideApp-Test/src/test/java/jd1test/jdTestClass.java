@@ -25,10 +25,12 @@ public class jdTestClass {
  @BeforeTest
  public void setup() throws IOException, InterruptedException {
 	 BRCapability.startAppium().start();
+	 BRCapability.startEmulator();
 	 driver = BRCapability.capability();
 	 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	 
  }
+ 
  @Test(priority=0)
  public void test() throws InterruptedException {
 	 AndroidElement booknow= driver.findElement(By.id("com.forbinary.banjararide:id/link_2")); 

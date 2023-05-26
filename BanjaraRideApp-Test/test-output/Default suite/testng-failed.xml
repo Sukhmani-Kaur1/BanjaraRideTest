@@ -5,9 +5,10 @@
     <classes>
       <class name="Extest.TestClass">
         <methods>
-          <include name="test"/>
           <include name="setup"/>
+          <include name="test02"/>
           <include name="close"/>
+          <include name="launch"/>
         </methods>
       </class> <!-- Extest.TestClass -->
     </classes>

@@ -54,6 +54,7 @@ public static AndroidDriver<AndroidElement> capability() throws IOException, Int
 	dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
 	dc.setCapability("additionalWebviewBundleIds", "process-awesomeAppDebug");
 	dc.setCapability(MobileCapabilityType.NO_RESET, true);
+	dc.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, true);
 	dc.setCapability(AndroidMobileCapabilityType.CHROMEDRIVER_EXECUTABLE, System.getProperty("user.dir")+"\\chromedriver.exe");
 	AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),dc);
 	return driver;
