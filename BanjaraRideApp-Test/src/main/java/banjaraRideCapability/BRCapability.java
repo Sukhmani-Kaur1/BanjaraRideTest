@@ -36,7 +36,7 @@ public class BRCapability {
 		Thread.sleep(6000);
 	}
 public static AndroidDriver<AndroidElement> capability() throws IOException, InterruptedException {
-	BRCapability.startEmulator();
+
 	FileReader fReader = new FileReader(System.getProperty("user.dir")+"\\src\\test\\resources\\global.properties");
 	Properties ps = new Properties();
 	ps.load(fReader);
@@ -52,9 +52,10 @@ public static AndroidDriver<AndroidElement> capability() throws IOException, Int
 	dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, appPackage);
 	dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, appActivity);
 	dc.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.ANDROID_UIAUTOMATOR2);
+	dc.setCapability("additionalWebviewBundleIds", "process-awesomeAppDebug");
 	dc.setCapability(MobileCapabilityType.NO_RESET, true);
-//	dc.setCapability(AndroidMobileCapabilityType.CHROMEDRIVER_EXECUTABLE, System.getProperty("user.dir")+"\\chromedriver.exe");
-	AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"),dc);
+	dc.setCapability(AndroidMobileCapabilityType.CHROMEDRIVER_EXECUTABLE, System.getProperty("user.dir")+"\\chromedriver.exe");
+	AndroidDriver<AndroidElement> driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),dc);
 	return driver;
 }
 }
