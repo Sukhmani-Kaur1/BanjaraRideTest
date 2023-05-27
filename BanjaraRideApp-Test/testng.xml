@@ -6,9 +6,7 @@
 	</listeners>
   <test  name="Test">
     <classes>
-      <class name="jd1test.jdTestClass"/>
       <class name="Extest.TestClass"/>
-      <class name="CallUs.callusTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

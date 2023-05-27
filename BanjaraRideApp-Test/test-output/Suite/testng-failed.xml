@@ -6,18 +6,11 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="jd1test.jdTestClass">
-        <methods>
-          <include name="close"/>
-        </methods>
-      </class> <!-- jd1test.jdTestClass -->
       <class name="Extest.TestClass">
         <methods>
+          <include name="test01"/>
           <include name="setup"/>
-          <include name="changeLang"/>
           <include name="test04"/>
-          <include name="test02"/>
-          <include name="test03"/>
           <include name="close"/>
           <include name="launch"/>
         </methods>
@@ -27,10 +20,17 @@
           <include name="setup"/>
           <include name="close"/>
           <include name="beforetest"/>
-          <include name="test"/>
           <include name="test02"/>
         </methods>
       </class> <!-- CallUs.callusTest -->
+      <class name="jd1test.jdTestClass">
+        <methods>
+          <include name="test"/>
+          <include name="test1"/>
+          <include name="close"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- jd1test.jdTestClass -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

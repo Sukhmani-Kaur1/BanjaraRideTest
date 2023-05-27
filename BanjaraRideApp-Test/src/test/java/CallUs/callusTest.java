@@ -14,6 +14,8 @@ import banjaraRideCapability.BRCapability;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 
 
 //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
@@ -35,7 +37,7 @@ public class callusTest {
 		 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	 }
 	 
-	 @Test(enabled=true)
+	 @Test(enabled=true,priority = 0)
 	 public void test() throws InterruptedException {
 		 
 //		 driver.findElement(By.xpath("//input[@text='ENGLISH']")).click();
@@ -60,7 +62,7 @@ public class callusTest {
 		
 	}
 	 
-	 @Test(enabled=true)
+	 @Test(enabled=true,priority = 1)
  public void test02() throws InterruptedException {
 		 
 
@@ -107,7 +109,7 @@ public class callusTest {
 			
 		
 	}
-	 
+	
 	 
 	 @AfterTest
 	 public void close() throws IOException {
