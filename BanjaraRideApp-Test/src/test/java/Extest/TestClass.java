@@ -11,6 +11,8 @@ import javax.lang.model.element.Element;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
@@ -37,6 +39,7 @@ import static io.appium.java_client.touch.offset.ElementOption.element;
 
 public class TestClass {
 	AndroidDriver<AndroidElement> driver;
+	WebDriverWait wait;
 	TouchAction action;
  @BeforeTest
  public void setup() throws IOException, InterruptedException{
@@ -46,16 +49,16 @@ public class TestClass {
  @BeforeMethod
  public void launch() throws IOException, InterruptedException {
 	 driver = BRCapability.capability();
-	 driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	
+	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	wait = new WebDriverWait(driver, 20);
 	 action = new TouchAction(driver);
 	
 }
- @Test(enabled = true)
+ @Test(enabled = true,priority = 0)
  public void test01() throws InterruptedException {
-	 Thread.sleep(3000);
 //	 driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"BOOK NOW\"))")).click();
-	 driver.findElement(By.xpath("//*[@class='android.widget.ImageButton']")).click();
+	 driver.findElementByAccessibilityId("Open").click();
+//	 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@text='Bookings']"))).click();
 	 driver.findElement(By.xpath("//*[@text='Bookings']")).click();
 	 driver.findElement(By.id("com.forbinary.banjararide:id/search_button")).click();
 	 driver.findElement(By.id("com.forbinary.banjararide:id/search_src_text")).sendKeys("activa");
@@ -65,9 +68,10 @@ public class TestClass {
 	 driver.pressKey(new KeyEvent(AndroidKey.BACK));
 	 
 }
- @Test(enabled = true)
+ @Test(enabled = true,priority = 1)
  public void test02() throws InterruptedException {
-	 driver.findElement(By.xpath("//*[@class='android.widget.ImageButton']")).click();
+	 driver.findElementByAccessibilityId("Open").click();
+	 Thread.sleep(2000);
 	 driver.findElement(By.xpath("//*[@text='Profile']")).click();
 	 driver.findElement(By.id("com.forbinary.banjararide:id/action_edit")).click();
 	 Thread.sleep(3000);
@@ -80,9 +84,8 @@ public class TestClass {
 	 driver.hideKeyboard();
 	 
 }
- @Test(enabled = true)
+ @Test(enabled = true,priority = 2)
  public void test03() throws InterruptedException {
-	 Thread.sleep(5000);
 	 driver.findElement(By.xpath("//*[@text='About Us']")).click();
 //	waitOptions(Duration.ofSeconds(3));
 	 driver.findElement(By.xpath("//*[@text='About Company!']")).click();
@@ -92,9 +95,9 @@ public class TestClass {
 	 waitOptions(Duration.ofSeconds(5));
 	 driver.pressKey(new KeyEvent(AndroidKey.BACK));
  }
- @Test(enabled = true)
+ @Test(enabled = true,priority = 3)
  public void test04() throws InterruptedException {
-	 driver.findElement(By.xpath("//*[@class='android.widget.ImageButton']")).click();
+	 driver.findElementByAccessibilityId("Open").click();
 	 driver.findElement(By.xpath("//*[@text='Information Center']")).click();
 	 Thread.sleep(3000);
 	 driver.findElement(By.xpath("//*[@text='About Us']")).click();
@@ -103,7 +106,7 @@ public class TestClass {
 	 waitOptions(Duration.ofSeconds(5));
 	 driver.pressKey(new KeyEvent(AndroidKey.BACK));
 }
- @Test(enabled = false)
+ @Test(enabled = false,priority = 4)
  public void contextSwitch() throws InterruptedException {
 	 System.out.println(driver.getContext());
 	 driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Rate Us On Google\"))")).click();
@@ -118,16 +121,17 @@ public class TestClass {
 //	 ["NATIVE_APP","WEBVIEW_chrome"]
  }
  
- @Test(enabled = true)
- public void changeLang() {
-	 driver.findElement(By.xpath("//*[@class='android.widget.ImageButton']")).click();
+ @Test(enabled = true,priority = 5)
+ public void changeLang() throws InterruptedException {
+	 driver.findElementByAccessibilityId("Open").click();
 	 driver.findElement(By.xpath("//*[@text='Change Language']")).click();
 	 driver.findElement(By.xpath("//*[@text='हिंदी']")).click();
-	 driver.findElement(By.xpath("//*[@class='android.widget.ImageButton']")).click();
+	 Thread.sleep(3000);
+	 driver.findElementByAccessibilityId("Open").click();
 	 driver.findElement(By.xpath("//*[@text='भाषा बदलो']")).click();
 	 driver.findElement(By.xpath("//*[@text='ENGLISH']")).click();
 }
- @Test(enabled = true)
+ @Test(enabled = true,priority = 6)
  public void closeSwipeApp() throws InterruptedException {
 	 driver.pressKey(new KeyEvent(AndroidKey.APP_SWITCH));
 	 Thread.sleep(3000);

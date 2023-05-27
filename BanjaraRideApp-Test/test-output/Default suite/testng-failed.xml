@@ -5,8 +5,13 @@
     <classes>
       <class name="Extest.TestClass">
         <methods>
+          <include name="test01"/>
+          <include name="changeLang"/>
           <include name="setup"/>
+          <include name="test04"/>
           <include name="test02"/>
+          <include name="test03"/>
+          <include name="closeSwipeApp"/>
           <include name="close"/>
           <include name="launch"/>
         </methods>
