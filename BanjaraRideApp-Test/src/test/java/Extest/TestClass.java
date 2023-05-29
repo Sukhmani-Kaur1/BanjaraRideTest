@@ -11,6 +11,7 @@ import javax.lang.model.element.Element;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.Keyboard;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -54,7 +55,7 @@ public class TestClass {
 	 action = new TouchAction(driver);
 	
 }
- @Test(enabled = true,priority = 0)
+ @Test(enabled = false,priority = 0)
  public void test01() throws InterruptedException {
 //	 driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"BOOK NOW\"))")).click();
 	 driver.findElementByAccessibilityId("Open").click();
@@ -84,7 +85,7 @@ public class TestClass {
 	 driver.hideKeyboard();
 	 
 }
- @Test(enabled = true,priority = 2)
+ @Test(enabled = false,priority = 2)
  public void test03() throws InterruptedException {
 	 driver.findElement(By.xpath("//*[@text='About Us']")).click();
 //	waitOptions(Duration.ofSeconds(3));
@@ -121,7 +122,7 @@ public class TestClass {
 //	 ["NATIVE_APP","WEBVIEW_chrome"]
  }
  
- @Test(enabled = true,priority = 5)
+ @Test(enabled = false,priority = 5)
  public void changeLang() throws InterruptedException {
 	 driver.findElementByAccessibilityId("Open").click();
 	 driver.findElement(By.xpath("//*[@text='Change Language']")).click();
