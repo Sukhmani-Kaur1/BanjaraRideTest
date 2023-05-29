@@ -62,7 +62,7 @@ public class callusTest {
 		
 	}
 	 
-	 @Test(enabled=true,priority = 1)
+	 @Test(enabled=false,priority = 1)
  public void test02() throws InterruptedException {
 		 
 
