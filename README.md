@@ -30,20 +30,6 @@ Make sure you have the essentials:
 - npm (v6 or higher) 📦
 - An Android device or emulator 🚗
 
-### Installation 🛠️
-
-Clone the repository and buckle up for the ride:
-
-```bash
-git clone https://github.com/Sukhmani-Kaur1/BanjaraRideTest.git
-cd BanjaraRideTest
-npm install
-
-### Running the Tests 🏁
-Hit the accelerator and run the tests:
-
-```npm run test
-
 ## Let's Connect! 🚀
 
 Got questions or want to share your adventure stories? Drop me a line!
