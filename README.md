@@ -35,6 +35,6 @@ Make sure you have the essentials:
 Got questions or want to share your adventure stories? Drop me a line!
 
 - Email: [sukhmani.dev006@gmail.com](mailto:sukhmani.dev006@gmail.com) 📧
-- LinkedIn: [Sukhmani Dev](https://www.linkedin.com/in/sukhmani-dev/) 🔗
-- Personal Website: [Sukhmani Kaur](https://sukhmani-kaur1.github.io/) 🌐
+- LinkedIn: [Sukhmani](https://www.linkedin.com/in/sukhmani-dev/) 🔗
+- Personal Website: [Sukhmani](https://sukhmani-kaur1.github.io/) 🌐
 - GitHub: [Sukhmani-Kaur1](https://github.com/Sukhmani-Kaur1) 🐱‍💻
